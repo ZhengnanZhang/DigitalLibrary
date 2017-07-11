@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Computer Science Bibliography</display-name>
+
+    <servlet>
+        <servlet-name>book</servlet-name>
+        <jsp-file>/book.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>book</servlet-name>
+        <url-pattern>/book/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cart</servlet-name>
+        <jsp-file>/cart.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>removeOne</servlet-name>
+        <jsp-file>/remove_one.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeOne</servlet-name>
+        <url-pattern>/removeone/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>removeAll</servlet-name>
+        <jsp-file>/remove_all.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeAll</servlet-name>
+        <url-pattern>/removeall/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>advancedSearch</servlet-name>
+        <jsp-file>/advanced_search.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>advancedSearch</servlet-name>
+        <url-pattern>/advancedsearch/</url-pattern>
+    </servlet-mapping>
+</web-app>
+
