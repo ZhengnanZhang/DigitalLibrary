@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>COMP9321 Assignment 1 Description</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel='stylesheet' type='text/css' href='proj.css'/>
+<style type="text/css"><!-- li{padding-top:0ex} h2.section{background-color:##99cccc} --></style>
+</head>
+<body>
+
+
+<h1 class="heading">COMP9321 Semester 2, 2016</h1>
+<h1 class="heading">Assignment 1: Digital Bibliographic Library</h1>
+
+<h2 class="section">Aims and Background</h2>
+
+<p class="instructions">
+This project aims to give students hands-on experience in designing and implementing a Web application on their own.<br /><br />
+ 
+In recent years, researchers in academia have begun to generate an increasing amount of data in the course of their experimetns and observations. 
+This data is of interest to other researchers for analysis, verification, and for building their effort on prior work in the field. 
+Legislation also requires Universities to comply with rules that dictate retaining data for a number of years after a publication has appeared in a journal. <br /><br />
+
+DBLP is a computer science bibliography website hosted at Universität Trier, in Germany.
+DBLP listed more than 3.4 million journal articles, conference papers, and other publications on computer science in July 2016. Following is a sample DBLP entry: <br /><br />
+
+<img alt="DBLP Sample Entry" width="800" src="dblpSample.png" />
+
+<br />
+You can download DBLP XML file and its DTD from this link: <a href="http://dblp.uni-trier.de/xml/" target="_blank">http://dblp.uni-trier.de/xml/</a>
+<br /><br />
+
+This assignment will use a subset of the DBLP for building an application that allows a user to discover information about available Computer Science Bibliography (e.g. authors, publications, venues, etc.), 
+select particular publication, and add them to a "shopping cart". The user can add or delete items from the shopping cart at any time. 
+
+
+</p>
+
+
+
+<h2 class="section">Requirements</h2>
+
+<h2 class="section2">1. DBLP Dataset </h2>
+<p class="instructions">
+We will use the DBLP <a href="http://dblp.uni-trier.de/xml/dblp.xml.gz" target="_blank">XML</a> file, which follows a Simple <a href="http://dblp.uni-trier.de/xml/dblp.dtd" target="_blank">DTD</a>. The full XML file has more than 3 million publications. During development, you will need to work on a sample extract: 
+you need to provide a sample that has around 20 thousand publications.
+We may test the application with any extract, which could also be larger that the one provided. 
+However, during testing, the filename will remain the same as the one provided.
+<br /><br />
+You will associate data such as search preferences and a "Shopping Cart" with a user using cookies and HTTP sessions. You should not use a login (user/password) for this purpose.
+Your application must have one and only one Servlet class. You can have other Java classes (e.g., beans and helpers).
+The web application has the following end points:
+</p>
+
+<h2 class="section2">2. The Homepage</h2>
+
+<p class="instructions">
+The starting/welcome page of your application, should display at the minimum a search bar allowing users to search for publications, authors, publication-type (e.g. Book, Journal, Conference, etc.), publication-date, and venues (e.g. BPM, VLDB, WWW, etc.). 
+Additionally, you should also provide to the users the ability to perform advanced search based on more specific search preferences.
+The welcome page should also display a list (approx. 10 items) chosen at random.
+</p>
+
+<h2 class="section2">3.  Search</h2>
+
+<p class="instructions">
+The user starts at the search page (that is, the starting/Welcome URL of the application is /search). This forwards to "search.jsp" which has a form with the following elements:
+</p>
+<ol>
+    <li>text fields to search for publications, authors, venues etc.;</li>
+    <li>a submit button labelled "Search";</li>
+    <li>And, a link to the Shopping Cart page;</li>
+</ol>
+
+<h2 class="section2">4. Search Results</h2>
+
+<p class="instructions">
+    instructions:
+</p>
+    <ol>
+        <li>The search functions forwards the users to the results page ("results.jsp"). The page has a list of entries that matched the search criteria, a submit button, and a link to the user's Shopping Cart;</li>
+        <li>If the search has turned up empty, the results page must display "Sorry, no matching datasets found!";</li>
+        <li>Otherwise, the results page displays a title for each entry (e.g. title, author etc.). The title is a hyperlink to a page that gives full information about the entry (e.g. author, title, page, year, book-title, etc). This page contains an "Add to Cart" button. The entry is added to the user's Shopping Cart on clicking this button.</li>
+        <li>The results page should show only 10 results at a time. If there are more than 10 results then, at the bottom of the page are two navigation links Previous and Next that allow the user to navigate the results 1 page at a time. Ensure that the Previous and Next links are not shown on the first page and the last page of results respectively.</li>
+    </ol>
+
+<h2 class="section2">5. Shopping Cart</h2>
+
+<p class="instructions">
+    instructions:
+</p>
+
+<ol>
+    <li>The Shopping Cart page can be opened by the user at any time by clicking on the links from the search form and the results page. The Shopping Cart page is a list of entry titles with a checkbox next to each title, and "Remove from Cart" and "Back to Search" buttons at the bottom of the page.</li>
+    <li>The user can remove entries from his/her Shopping Cart by selecting the checkboxes and clicking the "Remove from Cart" button.</li>
+    <li>If the user's Shopping Cart is empty, then the page must display "Shopping Cart is Empty!", followed by a "Back to Search" button.</li>
+    <li>The Back to Search button takes the user back to the search form/ welcome page.</li>
+</ol>
+
+<h2 class="section"> Assignment Execution </h2>
+
+<h2 class="subsection">Submission Requirements</h2>
+
+<p> The due date for this assignment is (end of Week 6): <b>Sunday, September 4 2016, 23:59:00</b>. You will demonstrate the assignments in Week 7 during the lab times.</p> 
+<ol>
+<li>After testing, generate a war file from your project. In Eclipse, this is Right-Click on project name --&gt; Export --&gt; WAR file. Make sure that the "Export Sources" checkbox is checked.</li>
+<li>
+email the WAR file to the following email address: 
+
+<pre>
+To: unsw.cse.comp9321@gmail.com
+From: [Your unsw email address]
+Subject: COMP9321-Ass1-S2_16
+Body: [Your Full Name]
+      [Your Student number]
+</pre>
+
+</li>
+
+<!--
+<li>Run the command
+<pre>
+give cs9321 Assign1 &lt;war-file&gt; 
+</pre>
+</li>
+-->
+
+</ol>
+
+Important Notes: 
+<ol>
+<li>This email address (unsw.cse.comp9321@gmail.com) is only for submitting your assignemts. For other inquiries please contact your lecturer.</li>
+<li>You do not need to email the XML file. The WAR file will be sufficient.</li>
+<li>You can demonstrate your assignments using CSE lab computers as well as your laptops.</li>
+<li>The following additional libs are accepted: JSTL. And for front-end purposes, JQuery and Bootstrap. Additionally, any other Javascript libs that are simply referenced (i.e. without having to add to the build path) in your HTML/JSP page is accepted. </li>
+</ol>
+
+
+<h2 class="subsection">Evaluation and Marking</h2>
+
+Your assignment will be evaluated by tutors independently (<a href="ass1_marking.pdf">Download</a> Assignment 1 Marking Scheme). We will test the functionality of the search application as well as the handling of errors such as invalid parameters and operations.
+
+This is an individual assignment worth <strong>10 marks</strong>. You will lose marks for any failed tests. Standard late penalties also applies.
+
+<!--
+<h2 class="subsection">Important</h2>
+<p> The answers to all these questions is NO.</p>
+<ol>
+<li> Could you extend the deadline ? </li>
+<li> Can I use XPath/XQuery/XMLBeans ? </li>
+<li> There are too many records. Can I show only a subset of the database ? </li>
+<li> Can I use an RDBMS ? </li>
+</ol>
+-->
+
+<p>
+Please use the message board for resolving other doubts.</p>
+<br />
+
+</body>
+</html>
